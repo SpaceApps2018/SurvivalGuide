@@ -94,23 +94,6 @@ public class AlertsFragment extends Fragment implements android.support.v4.app.L
         mEmptyStateTextView = (TextView)  getActivity().findViewById(R.id.empty_view);
         earthquakeListView.setEmptyView(mEmptyStateTextView);
 
-
-        /*
-         * Sets up a SwipeRefreshLayout.OnRefreshListener that is invoked when the user
-         * performs a swipe-to-refresh gesture.
-         */
-        mySwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
-            @Override
-            public void onRefresh() {
-                Log.i(LOG_TAG, "onRefresh called from SwipeRefreshLayout");
-
-                // This method performs the actual data-refresh operation.
-                // The method calls setRefreshing(false) when it's finished.
-                startLoader();
-                mySwipeRefreshLayout.setRefreshing(false);
-            }
-        });
-
         // Get a reference to the ConnectivityManager to check state of network connectivity
         ConnectivityManager connMgr = (ConnectivityManager)
                 getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
